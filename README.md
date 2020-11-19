@@ -1,22 +1,28 @@
-## Assignment
-Create a sticky note application where:
-* a user can load a page showing all the notes in the db right now
-* a user can add a new note
-
-Extra super bonus!
-* the user can drag stickynotes to a new order and have that order saved.
-
-## Next steps
-* make a model (think about your db table - what is it called? What fields does it have?)
+ make a model (think about your db table - what is it called? What fields does it have?)
     * create a dbset for it in data.cs
+
+    Model File-Name: Stickynotes.cs
+        Columns:        
+        public int Id {get;set;}
+        public string Notetitle {get;set;} 
+        public string Notetext {get;set;}
+        public int Order {get;set;}
+        [DataType(DataType.Date)]
+        public DateTime NoteDate {get; set;}
+
 * do scaffolding.
     * Scaffolding:
-        * the point is: instead of copy-pasting a thousand times, go in and edit code that's already there
-        * Adds the CRUD actions/views to go with your DB
-        * Your computer basically sets things up for you.
-            * Your computer - an mvc command that you run
-    * GRIME: Get Ready, I'm Making Everything
-    * model is used to figure out how to set up everything - must exist first.
+    - dotnet aspnet-codegenerator controller -name StickiesController -m Sticky -dc StickyContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries
+
 * make the table in the db - 'migrate'
+    dotnet ef migrations add InitialCreate
+    dotnet ef database update
+
 * run it! make sure you can create stickies!
+    - CHECK IS SUCCESSFUL? YAS
+
 * start making it look/work like you actually want it to.
+HTML/CSS/Javascript
+
+-automatically set order and post-time
+-stickynotes should look like stickynotes, and not db entries
