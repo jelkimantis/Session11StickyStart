@@ -26,3 +26,5 @@ HTML/CSS/Javascript
 
 -automatically set order and post-time
 -stickynotes should look like stickynotes, and not db entries
+ * CSS Styling - card & individual notes
+ * CSS display and layout
